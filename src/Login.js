@@ -55,10 +55,10 @@ const Login = () => {
     }
   return (
     <div className='  h-screen' style={{background:"linear-gradient(45deg, rgb(9, 14, 44) 0%, rgb(18, 44, 105) 58.93%, rgb(7, 141, 179) 100%)"}}>
-        <div className='w-full  max-w-xl mx-auto  pt-20  my-auto border-black  '>
-            <p className='m-2  ml-20 text-3xl font-bold text-white'>Opentext Administration  Client</p>
+        <div className='w-full  max-w-3xl mx-auto  pt-20  my-auto border-black  '>
+            <p className='m-2  ml-20 text-4xl font-bold text-white'>Opentext Administration  Client</p>
             <div className='flex justify-center items-center'>
-            <p className='m-10  ml-20 text-white text-md font-bold'><b>Opentext</b><sup>TM </sup>&nbsp;|&nbsp;Administation Client{" "}{" "}<sub>CE 24.1</sub></p>
+            <p className='m-10  ml-5 text-white text-md font-bold'><b>Opentext</b><sup>TM </sup>&nbsp;|&nbsp;Administation Client{" "}{" "}<sub>CE 24.1</sub></p>
             </div>
             <div className='flex justify-evenly p-5 '>
             <p className='text-white text-md font-bold text-m'>Server</p>
