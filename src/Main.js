@@ -8,6 +8,10 @@ import Main2 from './Main2';
 import { useSelector } from 'react-redux';
 import Header from './Header';
 import { data } from './DummyApi2';
+import { useDispatch } from 'react-redux';
+import { addTodo } from './todoSlice';
+
+//  setSearchval(e.target.value)
 
 
 
@@ -19,6 +23,7 @@ import { data } from './DummyApi2';
 const Main = () => {
     const [searchval,setSearchval] = useState('')
     const tempdata = useSelector(state =>state.str)
+    const dispatch = useDispatch()
     console.log(tempdata);
     
     const inputRef = useRef(null);
@@ -28,13 +33,12 @@ const Main = () => {
         <div class="flex">
             <Main1/>
             
-            <div class="w-1/2 bg-green-200 h-screen">
-                <Header/>
+            <div class="w-1/2 min-h-screen rounded-5xl " >
+                <Header/> 
             
-    <div>
-            <input className=  '  mb-5  mr-5 border border-black' type='text' value={searchval} onChange={(e)=>{setSearchval(e.target.value)}}  />
-            <button className='border border-black' 
-            >Search</button>
+    <div className='flex justify-center'>
+            <input className=  'items-center mb-5 pl-2  mr-5 border border-black rounded-lg' placeholder='Search' type='text' value={searchval} onChange={(e)=>{dispatch(addTodo(e.target.value));setSearchval(e.target.value)}}  />
+            
 
         </div>
         {
@@ -44,6 +48,7 @@ const Main = () => {
                     return <Main2 key={d.id} {...d}/>
 
                 }
+                
             })
         }
                 

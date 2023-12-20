@@ -2,6 +2,9 @@ import { paste } from '@testing-library/user-event/dist/paste';
 import React, { useState } from 'react'
 import img1 from './img/img1.jpg'
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addIP } from './todoSlice';
+
 
 const Login = () => {
 
@@ -11,6 +14,7 @@ const Login = () => {
     const [isAllowed,setAllowed] = useState(true);
     const [isValidIP,setisValidIP] = useState(true);
     const Navigate = useNavigate();
+    const dispatch = useDispatch()
 
     // console.log(Username)
     // console.log(Password)
@@ -37,10 +41,18 @@ const Login = () => {
         setAllowed(false);
 
     }
+
+    else if(Username!="dsadmin" || Password!=""||ipv4.test(IP + '.')==true){setAllowed(true)
+        Navigate('/browse')
+        dispatch(addIP(IP))
+        localStorage.setItem("IPaddress", IP);}
     else{
 
         setAllowed(true)
         Navigate('/browse')
+        dispatch(addIP(IP))
+        localStorage.setItem("IPaddress", IP);
+        
     }
 
     

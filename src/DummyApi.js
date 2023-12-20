@@ -1,6 +1,6 @@
 export const Services = [
     {
-        id:1,
+         id:1,
         Name:'Infrastructure',
         ele:['Buffer','Cache','Disk Volumes','Storage device']
     },

@@ -3,7 +3,8 @@ import { act } from 'react-dom/test-utils';
 
 const initialState = {
     
-    str :""
+    str :"",
+    IP:""
 }
 
 
@@ -16,12 +17,15 @@ export const todoSlice = createSlice({
             state.str = action.payload;
             
         },
+        addIP:(state,action) =>{
+            state.IP = action.payload
+        }
         // removeTodo: (state, action) => {
         //     state.todos = state.todos.filter((todo) => todo.id !== action.payload )
         // },
     }
 })
 
-export const {addTodo} = todoSlice.actions
+export const {addTodo,addIP} = todoSlice.actions
 
 export default todoSlice.reducer

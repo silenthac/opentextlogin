@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router-dom'
 import Main from './Main'
 import { RouterProvider } from 'react-router-dom'
 import Login from './Login'
+import Comp1 from './Comp1'
 
 const Body = () => {
 
@@ -19,6 +20,7 @@ const Body = () => {
   return (
     <div>
         <RouterProvider router={appRouter}/>
+        {/* <Comp1/> */}
     </div>
   )
 }
